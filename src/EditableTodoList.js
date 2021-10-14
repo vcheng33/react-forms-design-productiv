@@ -13,22 +13,12 @@ import EditableTodo from "./EditableTodo";
 
 function EditableTodoList({ todos, update, remove }) {
 
-  // function updateItem() {
-  //   update(todo.id)
-  // }
-
-  // function removeItem() {
-  //   remove(todo.id)
-  // }
-
   return (
     <div>
       {/*   FIXME  */}
       {todos.map(todo =>
         <div>
           <EditableTodo key={todo.id} todo={todo} update={update} remove={remove}/>
-          {/* <button onClick={updateItem}>Edit</button>
-          <button onClick={removeItem}>Remove</button> */}
         </div>
       )}
     </div>
