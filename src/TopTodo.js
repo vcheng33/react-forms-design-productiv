@@ -16,6 +16,7 @@ function TopTodo({ todos }) {
     (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
 
   const { id, title, description, priority } = top[0];
+  console.log("TopTodo:", id, title, description, priority);
 
   return <Todo
     id={id}

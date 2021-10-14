@@ -5,10 +5,11 @@ import React from "react";
  * Props:
  * - todo: like { id, title, description, priority }
  *
- * { EditableTodo, TodoApp } -> Todo
+ * { EditableTodo, TopTodo } -> Todo
  **/
 
 function Todo({ id, title, description, priority }) {
+  console.log("Todo:", id, title, description, priority);
   return (
     <div className="Todo" key={id}>
       <div><b>{title}</b> <small>(priority: {priority})</small></div>

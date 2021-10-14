@@ -12,25 +12,34 @@ import TodoForm from "./TodoForm";
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
 
-function EditableTodo() {
+function EditableTodo({ todo, update, remove }) {
+  console.log("EditableTodo:", todo);
+  const { id, title, description, priority } = todo;
+  // Is there another way to do this without a state?
+  const [isEditing, setIsEditing] = useState(false);
+  console.log("isEditing:", isEditing);
 
   /** Toggle if this is being edited */
-  function toggleEdit() { }
-
+  function toggleEdit() { 
+    setIsEditing(curr => !curr);
+  }
+  
   /** Call remove fn passed to this. */
-  function handleDelete() { }
-
+  function handleDelete() { 
+    remove(id);
+  }
+  
   /** Edit form saved; toggle isEditing and update in ancestor. */
-  function handleSave(formData) { }
+  function handleSave() { 
+    update(todo);
+    toggleEdit();
+  }
 
   return (
       <div className="EditableTodo">
-
-                EITHER
-
-                <TodoForm />
-
-                OR
+                {isEditing && 
+                <TodoForm initialFormData={todo} handleSave={handleSave}/>
+                }
 
                 <div className="mb-3">
                   <div className="float-right text-sm-right">
@@ -45,7 +54,12 @@ function EditableTodo() {
                       Del
                     </button>
                   </div>
-                  <Todo />
+                  <Todo 
+                    id={id} 
+                    title={title} 
+                    description={description} 
+                    priority={priority} 
+                  />
                 </div>
 
       </div>
