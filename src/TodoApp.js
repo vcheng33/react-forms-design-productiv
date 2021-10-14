@@ -40,7 +40,8 @@ function TodoApp({ initialTodos }) {
     ));
   }
 
-
+  // the if condition for Editable and Top are the same so can combine
+  // TODO: no todos hide the add form too; bug
   return (
     <main className="TodoApp">
       <div className="row">
@@ -49,7 +50,7 @@ function TodoApp({ initialTodos }) {
           <span className="text-muted">You have no todos.</span>
         </div>}
 
-        {todos.length > 1 &&
+        {todos.length > 0 &&
           <div className="col-md-6">
             <h3>Todos</h3>
             <EditableTodoList todos={todos} update={update} remove={remove} />

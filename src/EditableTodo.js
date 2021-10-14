@@ -14,8 +14,9 @@ import TodoForm from "./TodoForm";
 
 function EditableTodo({ todo, update, remove }) {
   console.log("EditableTodo:", todo);
-  const { id, title, description, priority } = todo;
-  // Is there another way to do this without a state?
+  const { id, title, description, priority } = todo; // could potentially destructure earlier 
+  // Is there another way to do this without a state? - fine to have here
+  // could have it up in the editableTodoList, but not really relevant for the list
   const [isEditing, setIsEditing] = useState(false);
   console.log("isEditing:", isEditing);
 

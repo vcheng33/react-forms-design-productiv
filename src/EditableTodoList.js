@@ -12,8 +12,10 @@ import EditableTodo from "./EditableTodo";
  */
 
 function EditableTodoList({ todos, update, remove }) {
-  console.log("EditableTodoList", todos)
+  console.log("EditableTodoList", todos);
   //  why does putting the key prop here work?
+  // key needs to be on the thing that the loop is created
+  // could remove the div as it's not adding much
   return (
     <div>
       {todos.map(todo =>
