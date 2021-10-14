@@ -16,7 +16,7 @@ const INITIAL_DATA = {
  */
 
 function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
-  const [formData, setFormData] = useState(initialFormData); // potential future bug with mutable initialFormData due INITIAL_DATA
+  const [formData, setFormData] = useState({ ...initialFormData });
 
   /** Update form input. */
   function handleChange(evt) {
@@ -31,7 +31,7 @@ function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleSave(formData);
-    setFormData(initialFormData);
+    setFormData({ ...initialFormData });
   }
 
   return (

@@ -41,7 +41,6 @@ function TodoApp({ initialTodos }) {
   }
 
   // the if condition for Editable and Top are the same so can combine
-  // TODO: no todos hide the add form too; bug
   return (
     <main className="TodoApp">
       <div className="row">
@@ -51,22 +50,26 @@ function TodoApp({ initialTodos }) {
         </div>}
 
         {todos.length > 0 &&
-          <div className="col-md-6">
-            <h3>Todos</h3>
-            <EditableTodoList todos={todos} update={update} remove={remove} />
+          <div className="row">
+            <div className="col-md-6">
+              <h3>Todos</h3>
+              <EditableTodoList todos={todos} update={update} remove={remove} />
+            </div>
+            <div className="col-md-6">
+            </div>
           </div>}
 
-        {todos.length > 0 && <div className="col-md-6">
-          <section className="mb-4">
-            <h3>Top Todo</h3>
-            <TopTodo todos={todos} />
-          </section>
+        <section className="col-md-6 mb-4">
+          <h3>Top Todo</h3>
+          {todos.length > 0 && <TopTodo todos={todos} />}
+          {todos.length === 0 && <p>No todos yet!</p>}
+        </section>
+        <section className="col-md-6">
+          <h3 className="mb-3">Add Nü</h3>
+          <TodoForm handleSave={create} />
+        </section>
 
-          <section>
-            <h3 className="mb-3">Add Nü</h3>
-            <TodoForm handleSave={create} />
-          </section>
-        </div>}
+
 
       </div>
     </main>
