@@ -23,7 +23,7 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    let updatedNewToDo = {...newTodo, id: uuid()};
+    let updatedNewToDo = { ...newTodo, id: uuid() };
     setTodos(curr => [...curr, updatedNewToDo]);
   }
 
@@ -42,32 +42,33 @@ function TodoApp({ initialTodos }) {
 
 
   return (
-      <main className="TodoApp">
-        <div className="row">
+    <main className="TodoApp">
+      <div className="row">
 
-          {todos.length === 0 && <div className="col-md-6">
-            <span className="text-muted">You have no todos.</span>
-          </div>}
-          
-          {todos.length > 1 && 
-            <div className="col-md-6">
-            <EditableTodoList todos={todos} update={update} remove={remove}/>
-            </div>}
-            
-          {todos.length > 0 && <div className="col-md-6">
-            <section className="mb-4">
-              <h3>Top Todo</h3>
-              <TopTodo todos={todos}/>
-            </section>
+        {todos.length === 0 && <div className="col-md-6">
+          <span className="text-muted">You have no todos.</span>
+        </div>}
 
-            <section>
-              <h3 className="mb-3">Add Nü</h3>
-              <TodoForm handleSave={create}/>
-            </section>
+        {todos.length > 1 &&
+          <div className="col-md-6">
+            <h3>Todos</h3>
+            <EditableTodoList todos={todos} update={update} remove={remove} />
           </div>}
 
-        </div>
-      </main>
+        {todos.length > 0 && <div className="col-md-6">
+          <section className="mb-4">
+            <h3>Top Todo</h3>
+            <TopTodo todos={todos} />
+          </section>
+
+          <section>
+            <h3 className="mb-3">Add Nü</h3>
+            <TodoForm handleSave={create} />
+          </section>
+        </div>}
+
+      </div>
+    </main>
   );
 }
 

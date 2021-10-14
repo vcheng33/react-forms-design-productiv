@@ -12,13 +12,13 @@ import EditableTodo from "./EditableTodo";
  */
 
 function EditableTodoList({ todos, update, remove }) {
-
+  console.log("EditableTodoList", todos)
+  //  why does putting the key prop here work?
   return (
     <div>
-      {/*   FIXME  */}
       {todos.map(todo =>
-        <div>
-          <EditableTodo key={todo.id} todo={todo} update={update} remove={remove}/>
+        <div key={todo.id}>
+          <EditableTodo todo={todo} update={update} remove={remove} />
         </div>
       )}
     </div>
