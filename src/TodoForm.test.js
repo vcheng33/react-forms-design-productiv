@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 import TEST_DATA from "./_testCommon";
 import TodoForm from "./TodoForm";
@@ -13,21 +13,31 @@ it("matches snapshot", function () {
     expect(asFragment()).toMatchSnapshot();
 });
 
-// it("can add a new todo", function () {
-//     const { getByLabelText, queryByText } = render(<TodoForm />);
+it("updates form data state when input changed", function () {
+    const  { getByPlaceholderText , 
+            queryByText, 
+            debug, 
+            getByLabelText,
+            container } = render(<TodoForm />);
 
-//     // no items yet
-//     expect(queryByText("ice cream: 100")).not.toBeInTheDocument();
+    // no items yet
+    expect(queryByText("get ice cream: nom nom nom")).not.toBeInTheDocument();
 
-//     const titleInput = getByLabelText("Title:");
-//     const descriptionInput = getByLabelText("Description:");
-//     const submitBtn = queryByText("Add a new item!");
+    const titleInput = getByPlaceholderText("Title");
+    const descriptionInput = getByPlaceholderText("Description");
+    const priorityInput = getByLabelText("Priority:");
 
-//     // fill out the form
-//     fireEvent.change(nameInput, { target: { value: "ice cream" } });
-//     fireEvent.change(qtyInput, { target: { value: 100 } });
-//     fireEvent.click(submitBtn);
 
-//     // item exists!
-//     expect(queryByText("ice cream: 100")).toBeInTheDocument();
-//   });
+    // fill out the form
+    fireEvent.change(titleInput, { target: { value: "get ice cream" } });
+    fireEvent.change(descriptionInput, { target: { value: "nom nom nom" } });
+    fireEvent.change(priorityInput, { target: { value: 2 }})
+
+    debug();
+    // item exists!
+    expect(container.querySelector("#newTodo-title").value).toEqual("get ice cream");
+    expect(container.querySelector("#newTodo-description").value).toEqual("nom nom nom");
+    expect(container.querySelector("#newTodo-priority").value).toEqual("2");
+    // expect(queryByText("nom nom nom")).toBeInTheDocument();
+  });
+

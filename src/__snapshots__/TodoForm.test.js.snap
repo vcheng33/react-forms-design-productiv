@@ -10,7 +10,7 @@ exports[`matches snapshot 1`] = `
     >
       <input
         aria-label="Title"
-        class="form-control"
+        class="form-control mb-3"
         id="newTodo-title"
         name="title"
         placeholder="Title"
@@ -22,7 +22,7 @@ exports[`matches snapshot 1`] = `
     >
       <textarea
         aria-label="Description"
-        class="form-control"
+        class="form-control mb-3"
         id="newTodo-description"
         name="description"
         placeholder="Description"

@@ -9,10 +9,10 @@ exports[`matches snapshot 1`] = `
       class="row"
     >
       <div
-        class="row"
+        class="col-md-6"
       >
         <div
-          class="col-md-6"
+          class="row"
         >
           <h3>
             Todos
@@ -146,111 +146,112 @@ exports[`matches snapshot 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="col-md-6"
-        />
       </div>
-      <section
-        class="col-md-6 mb-4"
-      >
-        <h3>
-          Top Todo
-        </h3>
-        <div
-          class="Todo"
-        >
-          <div>
-            <b>
-              Make dinner
-            </b>
-             
-            <small>
-              (priority: 1)
-            </small>
-          </div>
-          <div>
-            <small>
-              Cook something healthy
-            </small>
-          </div>
-        </div>
-      </section>
-      <section
+      <div
         class="col-md-6"
       >
-        <h3
-          class="mb-3"
+        <section
+          class="row mb-4"
         >
-          Add Nü
-        </h3>
-        <form
-          class="NewTodoForm"
+          <h3>
+            Top Todo
+          </h3>
+          <div
+            class="Todo"
+          >
+            <div>
+              <b>
+                Make dinner
+              </b>
+               
+              <small>
+                (priority: 1)
+              </small>
+            </div>
+            <div>
+              <small>
+                Cook something healthy
+              </small>
+            </div>
+          </div>
+        </section>
+        <section
+          class="row mb-4"
         >
-          <div
-            class="form-group"
+          <h3
+            class="mb-3"
           >
-            <input
-              aria-label="Title"
-              class="form-control"
-              id="newTodo-title"
-              name="title"
-              placeholder="Title"
-              value=""
-            />
-          </div>
-          <div
-            class="form-group"
-          >
-            <textarea
-              aria-label="Description"
-              class="form-control"
-              id="newTodo-description"
-              name="description"
-              placeholder="Description"
-            />
-          </div>
-          <div
-            class="form-group d-flex justify-content-between"
+            Add Nü
+          </h3>
+          <form
+            class="NewTodoForm"
           >
             <div
-              class="w-75 d-flex justify-content-between"
+              class="form-group"
             >
-              <label
-                class="d-inline-flex"
-                for="newTodo-priority"
-              >
-                Priority:  
-              </label>
-              <select
-                class="form-control form-control-sm d-inline-flex"
-                id="newTodo-priority"
-                name="priority"
-              >
-                <option
-                  value="1"
-                >
-                  Ultra-Über
-                </option>
-                <option
-                  value="2"
-                >
-                  Über
-                </option>
-                <option
-                  value="3"
-                >
-                  Meh
-                </option>
-              </select>
+              <input
+                aria-label="Title"
+                class="form-control mb-3"
+                id="newTodo-title"
+                name="title"
+                placeholder="Title"
+                value=""
+              />
             </div>
-            <button
-              class="btn-primary rig btn btn-sm NewTodoForm-addBtn"
+            <div
+              class="form-group"
             >
-              Gø!
-            </button>
-          </div>
-        </form>
-      </section>
+              <textarea
+                aria-label="Description"
+                class="form-control mb-3"
+                id="newTodo-description"
+                name="description"
+                placeholder="Description"
+              />
+            </div>
+            <div
+              class="form-group d-flex justify-content-between"
+            >
+              <div
+                class="w-75 d-flex justify-content-between"
+              >
+                <label
+                  class="d-inline-flex"
+                  for="newTodo-priority"
+                >
+                  Priority:  
+                </label>
+                <select
+                  class="form-control form-control-sm d-inline-flex"
+                  id="newTodo-priority"
+                  name="priority"
+                >
+                  <option
+                    value="1"
+                  >
+                    Ultra-Über
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    Über
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    Meh
+                  </option>
+                </select>
+              </div>
+              <button
+                class="btn-primary rig btn btn-sm NewTodoForm-addBtn"
+              >
+                Gø!
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
     </div>
   </main>
 </DocumentFragment>

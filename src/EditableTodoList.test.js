@@ -12,3 +12,15 @@ it("matches snapshot", function () {
     const { asFragment } = render(<EditableTodoList todos={TEST_DATA} />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+it("renders all EditableToDos", function () {
+    const  { getByPlaceholderText , 
+            queryByText, 
+            debug, 
+            getByLabelText,
+            getAllByRole,
+            container } = render(<EditableTodoList todos={TEST_DATA}/>);
+
+    const buttons = getAllByRole("button");
+    expect(buttons.length).toEqual(6);
+  });

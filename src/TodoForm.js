@@ -38,6 +38,7 @@ function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
     <form className="NewTodoForm" onSubmit={handleSubmit}>
 
       <div className="form-group">
+
         <input
           id="newTodo-title"
           name="title"
