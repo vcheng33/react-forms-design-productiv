@@ -87,3 +87,7 @@ it("update a todo", function () {
     expect(queryByText("get ice cream")).toBeInTheDocument();
     expect(queryByText("nom nom nom")).toBeInTheDocument();
 })
+
+// other tests:
+// delete all todos to see if the no todos messages show
+// check if top todo changes when priority levels change

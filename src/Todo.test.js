@@ -31,3 +31,6 @@ it("contains todo information", function () {
     expect(container.querySelector('.Todo'))
         .toBeInTheDocument();
 });
+
+// other tests for TopTodo:
+// could also see what zero, one renders

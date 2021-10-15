@@ -19,3 +19,8 @@ it("renders all EditableToDos", function () {
     const buttons = getAllByRole("button");
     expect(buttons.length).toEqual(6);
 });
+
+// other changes:
+// even in smoke and snapshot, should pass in fn for the props
+// pass in mock tests for the props
+//      Note - just check if the mock functions are called/fired (toHaveBeenCalled)

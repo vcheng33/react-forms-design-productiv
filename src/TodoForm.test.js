@@ -41,3 +41,5 @@ it("updates form data state when input changed", function () {
     // expect(queryByText("nom nom nom")).toBeInTheDocument();
 });
 
+// other changes:
+// mock submit, then check if the submit function would have been called
