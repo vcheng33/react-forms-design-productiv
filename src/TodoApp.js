@@ -50,24 +50,24 @@ function TodoApp({ initialTodos }) {
         </div>}
 
         {todos.length > 0 &&
-          <div className="row">
-            <div className="col-md-6">
+          <div className="col-md-6">
+            <div className="row">
               <h3>Todos</h3>
               <EditableTodoList todos={todos} update={update} remove={remove} />
             </div>
-            <div className="col-md-6">
-            </div>
           </div>}
 
-        <section className="col-md-6 mb-4">
-          <h3>Top Todo</h3>
-          {todos.length > 0 && <TopTodo todos={todos} />}
-          {todos.length === 0 && <p>No todos yet!</p>}
-        </section>
-        <section className="col-md-6">
-          <h3 className="mb-3">Add Nü</h3>
-          <TodoForm handleSave={create} />
-        </section>
+        <div className="col-md-6">
+          <section className="row mb-4">
+            <h3>Top Todo</h3>
+            {todos.length > 0 && <TopTodo todos={todos} />}
+            {todos.length === 0 && <p>No todos yet!</p>}
+          </section>
+          <section className="row mb-4">
+            <h3 className="mb-3">Add Nü</h3>
+            <TodoForm handleSave={create} />
+          </section>
+        </div>
 
 
 

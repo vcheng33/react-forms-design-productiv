@@ -41,7 +41,7 @@ function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
         <input
           id="newTodo-title"
           name="title"
-          className="form-control"
+          className="form-control mb-3"
           placeholder="Title"
           onChange={handleChange}
           value={formData.title}
@@ -53,7 +53,7 @@ function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
         <textarea
           id="newTodo-description"
           name="description"
-          className="form-control"
+          className="form-control mb-3"
           placeholder="Description"
           onChange={handleChange}
           value={formData.description}
