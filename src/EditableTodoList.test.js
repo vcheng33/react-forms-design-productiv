@@ -14,13 +14,8 @@ it("matches snapshot", function () {
 });
 
 it("renders all EditableToDos", function () {
-    const  { getByPlaceholderText , 
-            queryByText, 
-            debug, 
-            getByLabelText,
-            getAllByRole,
-            container } = render(<EditableTodoList todos={TEST_DATA}/>);
+    const { getAllByRole } = render(<EditableTodoList todos={TEST_DATA} />);
 
     const buttons = getAllByRole("button");
     expect(buttons.length).toEqual(6);
-  });
+});

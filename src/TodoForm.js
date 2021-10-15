@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 const INITIAL_DATA = {
   title: "",
@@ -30,6 +31,7 @@ function TodoForm({ initialFormData = INITIAL_DATA, handleSave }) {
   /** Call parent function and clear form. */
   function handleSubmit(evt) {
     evt.preventDefault();
+    formData.id = formData.id || uuid();
     handleSave(formData);
     setFormData({ ...initialFormData });
   }

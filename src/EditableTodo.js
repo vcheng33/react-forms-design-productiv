@@ -37,7 +37,7 @@ function EditableTodo({ todo, update, remove }) {
   }
 
   return (
-    <div className="EditableTodo">
+    <div className="EditableTodo" id={id}>
       {isEditing &&
         <TodoForm initialFormData={todo} handleSave={handleSave} />
       }

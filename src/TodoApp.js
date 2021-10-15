@@ -23,12 +23,14 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    let updatedNewToDo = { ...newTodo, id: uuid() };
+    let updatedNewToDo = { ...newTodo };
     setTodos(curr => [...curr, updatedNewToDo]);
   }
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
+    // console.log("updatedTodo", updatedTodo);
+    // console.log("updateTodo curr", todos)
     setTodos(curr => curr.map(
       todo => todo.id === updatedTodo.id ? updatedTodo : todo));
   }

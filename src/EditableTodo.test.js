@@ -14,11 +14,7 @@ it("matches snapshot", function () {
 });
 
 it("edit button shows form", function () {
-    const  { getByPlaceholderText , 
-            queryByText, 
-            debug, 
-            getByLabelText,
-            container } = render(<EditableTodo todo={TEST_DATA[0]}/>);
+    const { container } = render(<EditableTodo todo={TEST_DATA[0]} />);
 
     // no items yet
     expect(container.querySelector(".NewTodoForm")).not.toBeInTheDocument();
@@ -27,6 +23,6 @@ it("edit button shows form", function () {
 
     // // fill out the form
     fireEvent.click(editButton);
-    
+
     expect(container.querySelector(".NewTodoForm")).toBeInTheDocument();
-  });
+});

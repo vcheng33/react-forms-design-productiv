@@ -14,11 +14,11 @@ it("matches snapshot", function () {
 });
 
 it("updates form data state when input changed", function () {
-    const  { getByPlaceholderText , 
-            queryByText, 
-            debug, 
-            getByLabelText,
-            container } = render(<TodoForm />);
+    const { getByPlaceholderText,
+        queryByText,
+        debug,
+        getByLabelText,
+        container } = render(<TodoForm />);
 
     // no items yet
     expect(queryByText("get ice cream: nom nom nom")).not.toBeInTheDocument();
@@ -31,7 +31,7 @@ it("updates form data state when input changed", function () {
     // fill out the form
     fireEvent.change(titleInput, { target: { value: "get ice cream" } });
     fireEvent.change(descriptionInput, { target: { value: "nom nom nom" } });
-    fireEvent.change(priorityInput, { target: { value: 2 }})
+    fireEvent.change(priorityInput, { target: { value: 2 } });
 
     debug();
     // item exists!
@@ -39,5 +39,5 @@ it("updates form data state when input changed", function () {
     expect(container.querySelector("#newTodo-description").value).toEqual("nom nom nom");
     expect(container.querySelector("#newTodo-priority").value).toEqual("2");
     // expect(queryByText("nom nom nom")).toBeInTheDocument();
-  });
+});
 
