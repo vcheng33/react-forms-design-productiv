@@ -4,6 +4,7 @@ exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="EditableTodo"
+    id="1"
   >
     <div
       class="mb-3"

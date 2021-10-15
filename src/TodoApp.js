@@ -23,7 +23,7 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    let updatedNewToDo = { ...newTodo };
+    let updatedNewToDo = { ...newTodo, id: uuid() };
     setTodos(curr => [...curr, updatedNewToDo]);
   }
 

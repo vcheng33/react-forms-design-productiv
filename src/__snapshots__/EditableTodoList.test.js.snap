@@ -6,6 +6,7 @@ exports[`matches snapshot 1`] = `
     <div>
       <div
         class="EditableTodo"
+        id="1"
       >
         <div
           class="mb-3"
@@ -48,6 +49,7 @@ exports[`matches snapshot 1`] = `
     <div>
       <div
         class="EditableTodo"
+        id="2"
       >
         <div
           class="mb-3"
@@ -90,6 +92,7 @@ exports[`matches snapshot 1`] = `
     <div>
       <div
         class="EditableTodo"
+        id="3"
       >
         <div
           class="mb-3"

@@ -31,8 +31,8 @@ function EditableTodo({ todo, update, remove }) {
   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
-  function handleSave() {
-    update(todo);
+  function handleSave(formData) {
+    update({ id: todo.id, ...formData });
     toggleEdit();
   }
 
