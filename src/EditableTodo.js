@@ -51,12 +51,12 @@ function EditableTodo({ todo, update, remove }) {
             priority={priority}
           />
           <button
-            className="EditableTodo-toggle btn-link btn btn-sm"
+            className="EditableTodo-toggle btn-primary btn btn-sm me-1"
             onClick={toggleEdit}>
             Edit
           </button>
           <button
-            className="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+            className="EditableTodo-delBtn btn btn-danger btn-sm"
             onClick={handleDelete}>
             Del
           </button>

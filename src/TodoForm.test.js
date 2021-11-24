@@ -43,3 +43,4 @@ it("updates form data state when input changed", function () {
 
 // other changes:
 // mock submit, then check if the submit function would have been called
+// expect(submitfn).toHaveBeenCalledWith("value");

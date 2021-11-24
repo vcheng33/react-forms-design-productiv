@@ -20,7 +20,7 @@ function Quote() {
                 <p><i>- {quote.author}</i></p>
             </div>
             }
-            <button className="btn-warning btn btn-sm" 
+            <button className="btn-warning btn btn-sm mt-3 mb-4" 
                 onClick={handleClick}>New Quote</button>
             </div>
     )

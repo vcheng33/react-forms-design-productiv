@@ -29,8 +29,6 @@ function TodoApp({ initialTodos }) {
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
-    // console.log("updatedTodo", updatedTodo);
-    // console.log("updateTodo curr", todos)
     setTodos(curr => curr.map(
       todo => todo.id === updatedTodo.id ? updatedTodo : todo));
   }
@@ -48,22 +46,22 @@ function TodoApp({ initialTodos }) {
       <div className="row">
 
         {todos.length === 0 && <div className="col-md-6">
-          <span className="text-muted">You have no todos.</span>
+          <span className="text-muted">You have no to dos.</span>
         </div>}
 
         {todos.length > 0 &&
           <div className="col-md-6">
             <div className="row">
-              <h3>Todos</h3>
+              <h3>To Dos</h3>
               <EditableTodoList todos={todos} update={update} remove={remove} />
             </div>
           </div>}
 
         <div className="col-md-6">
           <section className="row mb-4">
-            <h3>Top Todo</h3>
+            <h3>Top To Do</h3>
             {todos.length > 0 && <TopTodo todos={todos} />}
-            {todos.length === 0 && <p>No todos yet!</p>}
+            {todos.length === 0 && <p>No to dos yet!</p>}
           </section>
           <section className="row mb-4">
             <h3 className="mb-3">Add Nü</h3>
